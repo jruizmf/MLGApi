@@ -1,0 +1,13 @@
+C:\Users\joser\source\repos\MLGApi\MLGDataAccessLayer\bin\Debug\netcoreapp3.1\MLGDataAccessLayer.deps.json
+C:\Users\joser\source\repos\MLGApi\MLGDataAccessLayer\bin\Debug\netcoreapp3.1\MLGDataAccessLayer.runtimeconfig.json
+C:\Users\joser\source\repos\MLGApi\MLGDataAccessLayer\bin\Debug\netcoreapp3.1\MLGDataAccessLayer.runtimeconfig.dev.json
+C:\Users\joser\source\repos\MLGApi\MLGDataAccessLayer\bin\Debug\netcoreapp3.1\MLGDataAccessLayer.dll
+C:\Users\joser\source\repos\MLGApi\MLGDataAccessLayer\bin\Debug\netcoreapp3.1\MLGDataAccessLayer.pdb
+C:\Users\joser\source\repos\MLGApi\MLGDataAccessLayer\obj\Debug\netcoreapp3.1\MLGDataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\joser\source\repos\MLGApi\MLGDataAccessLayer\obj\Debug\netcoreapp3.1\MLGDataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joser\source\repos\MLGApi\MLGDataAccessLayer\obj\Debug\netcoreapp3.1\MLGDataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\joser\source\repos\MLGApi\MLGDataAccessLayer\obj\Debug\netcoreapp3.1\MLGDataAccessLayer.AssemblyInfo.cs
+C:\Users\joser\source\repos\MLGApi\MLGDataAccessLayer\obj\Debug\netcoreapp3.1\MLGDataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\joser\source\repos\MLGApi\MLGDataAccessLayer\obj\Debug\netcoreapp3.1\MLGDataAccessLayer.dll
+C:\Users\joser\source\repos\MLGApi\MLGDataAccessLayer\obj\Debug\netcoreapp3.1\MLGDataAccessLayer.pdb
+C:\Users\joser\source\repos\MLGApi\MLGDataAccessLayer\obj\Debug\netcoreapp3.1\MLGDataAccessLayer.genruntimeconfig.cache
