@@ -26,15 +26,23 @@ namespace MLGApi.Controllers
         }
 
         // GET: api/ArticuloModelos
-        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ArticuloModelo>>> GetArticulos()
         {
-            return await _articuloRepository.GetAll();
+            try
+            {
+                var result = await _articuloRepository.GetAll();
+                return Ok(result);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // GET: api/ArticuloModelos/5
-        [HttpGet("{id}")]
+        [Route("{id:Guid}")]
+        [HttpGet]
         public async Task<ActionResult<ArticuloModelo>> GetArticuloModelo(Guid id)
         {
             var articulo = await _articuloRepository.GetOne(id);

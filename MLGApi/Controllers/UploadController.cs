@@ -5,6 +5,7 @@ using System.Threading;
 using Microsoft.Extensions.Hosting.Internal;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using System;
 
 namespace MLGApi.Controllers
 {
@@ -17,21 +18,24 @@ namespace MLGApi.Controllers
             _environment = environment;
         }
     
-        [HttpPost("upload", Name = "upload")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<object>> UploadFile(
-         IFormFile file,
-         CancellationToken cancellationToken)
+        [HttpPost]
+        public async Task<ActionResult<object>> Post(IFormFile file)
         {
-            string fName = file.FileName;
-            string path = Path.Combine(_environment.ContentRootPath, "Images/" + file.FileName);
-            using (var stream = new FileStream(path, FileMode.Create))
+            try
             {
-                await file.CopyToAsync(stream);
-            }
+                string fName = file.FileName;
+                string path = Path.Combine(_environment.ContentRootPath, "Images/" + file.FileName);
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
 
-            return new { image = file.FileName };
+                return new { image = file.FileName };
+            } 
+            catch(Exception ex)
+            {
+                return  BadRequest(new { mensaje = ex });
+            }
 
         }
     }
