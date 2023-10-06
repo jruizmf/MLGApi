@@ -27,7 +27,7 @@ namespace MLGApi.Controllers
 
         // GET: api/ArticuloModelos
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ArticuloModelo>>> GetArticulos()
+        public async Task<ActionResult> GetArticulos()
         {
             try
             {
