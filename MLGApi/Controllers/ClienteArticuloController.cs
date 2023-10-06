@@ -32,8 +32,31 @@ namespace MLGApi.Controllers
         public async Task<ActionResult<IEnumerable<MLGDataAccessLayer.models.ClienteArticuloModelo>>> GetClienteArticulos()
         {
             try {
-                return await _clienteArticuloRepository.GetAll();
+                var result = await _clienteArticuloRepository.GetAll();
+
+                return result;
             } catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [Route("Usuario/{id}")]
+        [HttpGet]
+        public async Task<ActionResult> GetClienteArticuloByUser(Guid id)
+        {
+
+            try
+            {
+                var clienteArticulo = await _clienteArticuloRepository.GetByUser(id);
+
+                if (clienteArticulo == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(clienteArticulo);
+            }
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -41,19 +64,19 @@ namespace MLGApi.Controllers
 
         // GET: api/ClienteArticuloModelos/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<MLGDataAccessLayer.models.ClienteArticuloModelo>> GetClienteArticuloModelo(Guid id)
+        public async Task<ActionResult> GetClienteArticuloModelo(Guid id)
         {
             
             try
             {
-                var clienteArticuloModelo = await _clienteArticuloRepository.GetOne(id);
+                var clienteArticulo = await _clienteArticuloRepository.GetOne(id);
 
-                if (clienteArticuloModelo == null)
+                if (clienteArticulo == null)
                 {
                     return NotFound();
                 }
 
-                return clienteArticuloModelo;
+                return Ok(clienteArticulo);
             }
             catch (Exception ex)
             {

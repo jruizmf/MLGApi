@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MLGBussinesLogic.interfaces;
 using MLGDataAccessLayer;
 using MLGDataAccessLayer.models;
 
@@ -15,10 +16,12 @@ namespace MLGApi.Controllers
     public class TiendaController : ControllerBase
     {
         private readonly AppDBContext _context;
+        private readonly ITiendaRepository _tiendaRepository;
 
-        public TiendaController(AppDBContext context)
+        public TiendaController(AppDBContext context, ITiendaRepository tiendaRepository)
         {
             _context = context;
+            _tiendaRepository = tiendaRepository;
         }
 
         // GET: api/Tienda
@@ -48,30 +51,15 @@ namespace MLGApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTiendaModelo(Guid id, TiendaModelo tiendaModelo)
         {
-            if (id != tiendaModelo.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(tiendaModelo).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TiendaModeloExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+                await _tiendaRepository.Update(id, tiendaModelo);
 
-            return NoContent();
+                return Ok(new { mensaje = "Tienda modificada exitosamente" });
+            } catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // POST: api/Tienda
