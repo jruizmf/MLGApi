@@ -17,6 +17,7 @@ using MLGBussinessLogic.services;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
 using MLGBussinessLogic.middleware;
+using IClienteArticuloRepository = MLGBussinessLogic.interfaces.IClienteArticuloRepository;
 
 namespace MLGApi
 {
@@ -50,7 +51,7 @@ namespace MLGApi
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IUsuarioClienteRepository, UsuarioClienteRepository>();
-
+            services.AddScoped<IClienteArticuloRepository, ClienteArticuloRepository>();
             services.AddScoped<ITiendaRepository, TiendaRepository>();
             services.AddScoped<ITiendaArticuloRepository, TiendaArticuloRepository>();
 
