@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MLGBussinesLogic.interfaces;
+using MLGBussinessLogic.interfaces;
 using MLGDataAccessLayer;
 using MLGDataAccessLayer.models;
 
@@ -15,10 +18,11 @@ namespace MLGApi.Controllers
     public class TiendaArticuloController : ControllerBase
     {
         private readonly AppDBContext _context;
-
-        public TiendaArticuloController(AppDBContext context)
+        private readonly ITiendaArticuloRepository _tiendaArticuloRepository;
+        public TiendaArticuloController(AppDBContext context, ITiendaArticuloRepository tiendaArticuloRepository)
         {
             _context = context;
+            _tiendaArticuloRepository = tiendaArticuloRepository;
         }
 
         // GET: api/TiendaArticulo
@@ -26,6 +30,28 @@ namespace MLGApi.Controllers
         public async Task<ActionResult<IEnumerable<TiendaArticuloModelo>>> GetTiendaArticulos()
         {
             return await _context.TiendaArticulos.ToListAsync();
+        }
+
+        [Route("Tienda/{id}")]
+        [HttpGet]
+        public async Task<ActionResult> GetClienteArticuloByUser(Guid id)
+        {
+
+            try
+            {
+                var clienteArticulo = await _tiendaArticuloRepository.GetByUser(id);
+
+                if (clienteArticulo == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(clienteArticulo);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // GET: api/TiendaArticulo/5

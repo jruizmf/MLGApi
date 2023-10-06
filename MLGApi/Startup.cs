@@ -52,8 +52,8 @@ namespace MLGApi
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IUsuarioClienteRepository, UsuarioClienteRepository>();
             services.AddScoped<IClienteArticuloRepository, ClienteArticuloRepository>();
-            services.AddScoped<ITiendaRepository, TiendaRepository>();
-            services.AddScoped<ITiendaArticuloRepository, TiendaArticuloRepository>();
+            services.AddScoped<MLGBussinesLogic.interfaces.ITiendaRepository, TiendaRepository>();
+            services.AddScoped<MLGBussinessLogic.interfaces.ITiendaArticuloRepository, TiendaArticuloRepository>();
 
             AddSwagger(services);
        
