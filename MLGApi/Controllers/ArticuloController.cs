@@ -62,30 +62,37 @@ namespace MLGApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutArticuloModelo(Guid id, ArticuloModelo articuloModelo)
         {
-            if (id != articuloModelo.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(articuloModelo).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ArticuloModeloExists(id))
+                if (id != articuloModelo.Id)
                 {
-                    return NotFound();
+                    return BadRequest();
                 }
-                else
-                {
-                    throw;
-                }
-            }
 
-            return NoContent();
+                _context.Entry(articuloModelo).State = EntityState.Modified;
+
+                try
+                {
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ArticuloModeloExists(id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+
+                return NoContent();
+            }
+            catch (Exception ex )
+            {
+               return  BadRequest(ex.Message);
+            }
         }
 
         // POST: api/ArticuloModelos
@@ -94,10 +101,16 @@ namespace MLGApi.Controllers
         [HttpPost]
         public async Task<ActionResult<ArticuloModelo>> PostArticuloModelo(ArticuloModelo articulo)
         {
-            await _articuloRepository.Add(articulo);
-            await _context.SaveChangesAsync();
+            try {
+                await _articuloRepository.Add(articulo);
+                await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetArticuloModelo", new { id = articulo.Id }, articulo);
+                return CreatedAtAction("GetArticuloModelo", new { id = articulo.Id }, articulo);
+            } catch(Exception ex)
+            {
+                return BadRequest(ex);
+            }
+           
         }
 
         // DELETE: api/ArticuloModelos/5

@@ -1,3 +1,9 @@
+C:\Users\joser\source\repos\MLGApi\MLGApi\obj\Debug\netcoreapp3.1\MLGApi.csproj.AssemblyReference.cache
+C:\Users\joser\source\repos\MLGApi\MLGApi\obj\Debug\netcoreapp3.1\MLGApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joser\source\repos\MLGApi\MLGApi\obj\Debug\netcoreapp3.1\MLGApi.AssemblyInfoInputs.cache
+C:\Users\joser\source\repos\MLGApi\MLGApi\obj\Debug\netcoreapp3.1\MLGApi.AssemblyInfo.cs
+C:\Users\joser\source\repos\MLGApi\MLGApi\obj\Debug\netcoreapp3.1\MLGApi.csproj.CoreCompileInputs.cache
+C:\Users\joser\source\repos\MLGApi\MLGApi\obj\Debug\netcoreapp3.1\MLGApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\joser\source\repos\MLGApi\MLGApi\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\joser\source\repos\MLGApi\MLGApi\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\joser\source\repos\MLGApi\MLGApi\bin\Debug\netcoreapp3.1\MLGApi.exe
@@ -177,13 +183,6 @@ C:\Users\joser\source\repos\MLGApi\MLGApi\bin\Debug\netcoreapp3.1\MLGBussinessLo
 C:\Users\joser\source\repos\MLGApi\MLGApi\bin\Debug\netcoreapp3.1\MLGDataAccessLayer.dll
 C:\Users\joser\source\repos\MLGApi\MLGApi\bin\Debug\netcoreapp3.1\MLGBussinessLogic.pdb
 C:\Users\joser\source\repos\MLGApi\MLGApi\bin\Debug\netcoreapp3.1\MLGDataAccessLayer.pdb
-C:\Users\joser\source\repos\MLGApi\MLGApi\obj\Debug\netcoreapp3.1\MLGApi.csproj.AssemblyReference.cache
-C:\Users\joser\source\repos\MLGApi\MLGApi\obj\Debug\netcoreapp3.1\MLGApi.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\joser\source\repos\MLGApi\MLGApi\obj\Debug\netcoreapp3.1\MLGApi.AssemblyInfoInputs.cache
-C:\Users\joser\source\repos\MLGApi\MLGApi\obj\Debug\netcoreapp3.1\MLGApi.AssemblyInfo.cs
-C:\Users\joser\source\repos\MLGApi\MLGApi\obj\Debug\netcoreapp3.1\MLGApi.csproj.CoreCompileInputs.cache
-C:\Users\joser\source\repos\MLGApi\MLGApi\obj\Debug\netcoreapp3.1\MLGApi.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\joser\source\repos\MLGApi\MLGApi\obj\Debug\netcoreapp3.1\MLGApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\joser\source\repos\MLGApi\MLGApi\obj\Debug\netcoreapp3.1\staticwebassets\MLGApi.StaticWebAssets.Manifest.cache
 C:\Users\joser\source\repos\MLGApi\MLGApi\obj\Debug\netcoreapp3.1\staticwebassets\MLGApi.StaticWebAssets.Pack.cache
 C:\Users\joser\source\repos\MLGApi\MLGApi\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.MLGApi.Microsoft.AspNetCore.StaticWebAssets.props

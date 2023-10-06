@@ -119,6 +119,7 @@ namespace MLGApi
             {
                 endpoints.MapControllers();
             });
+
             app.UseStaticFiles();
         }
     }

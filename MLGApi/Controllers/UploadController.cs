@@ -19,18 +19,18 @@ namespace MLGApi.Controllers
         }
     
         [HttpPost]
-        public async Task<ActionResult<object>> Post(IFormFile file)
+        public async Task<ActionResult<string>> Post(IFormFile file)
         {
             try
             {
                 string fName = file.FileName;
-                string path = Path.Combine(_environment.ContentRootPath, "Images/" + file.FileName);
+                string path = Path.Combine(_environment.WebRootPath, "Images", fName);
                 using (var stream = new FileStream(path, FileMode.Create))
                 {
                     await file.CopyToAsync(stream);
                 }
 
-                return new { image = file.FileName };
+                return Ok(file.FileName);
             } 
             catch(Exception ex)
             {
